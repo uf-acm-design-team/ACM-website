@@ -11,4 +11,4 @@ The primary goals of this project are:
 
 ## 📖 Documentation
 
-- Getting set up on your local machine? Check out our [Getting Started Guide](./docs/GETTING_STARTED.md).
+- Getting set up on your local machine? Check out our [Getting Started Guide](./GETTING_STARTED.md).
