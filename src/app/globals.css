@@ -3,7 +3,17 @@
 /* Brand colors — add the rest of the Figma tokens here once the design is final. */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #484447;
+  --primary: #670af2;
+  --panel: #6b2fbf;
+
+  --light-primary-foreground: #838383;
+  --blue-foreground: #170a4d;
+  --red-foreground: #d11111;
+
+  --accenture: #bd00ff;
+  --datadog: #632ca6;
+
   --accent: #6b2fbf;
   --accent-foreground: #ffffff;
 }
@@ -11,10 +21,24 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-panel: var(--panel);
+
+  --color-light-primary-foreground: var(--light-primary-foreground);
+  --color-blue-foreground: var(--blue-foreground);
+  --color-red-foreground: var(--red-foreground);
+
+  --color-accenture: var(--accenture);
+  --color-datadog: var(--datadog);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-host-grotesk);
+  --font-display: var(--font-host-grotesk);
+  --font-poppins: var(--font-poppins-loaded);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
