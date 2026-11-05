@@ -8,8 +8,11 @@ import Projects from "@/app/components/Projects/Projects";
 import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Footer from "@/app/components/Footer/Footer";
 import { ABOUT } from "@/data/about";
+import { getInstagram } from "@/data/instagram";
 
-export default function Home() {
+export default async function Home() {
+  const instagram = await getInstagram();
+
   return (
     <>
       <Navbar />
@@ -17,7 +20,7 @@ export default function Home() {
         <Hero />
         <Sponsors />
         <About content={ABOUT} />
-        <Instagram />
+        <Instagram content={instagram} />
         <Officers />
         <Projects />
         <WhyAcm />
