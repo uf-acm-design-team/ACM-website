@@ -11,6 +11,9 @@
   --acm-border: #d7d8e4;
   --acm-porcelain: #fcfcff;
   --acm-ice: #f6f9ff; /* didnt have a designated name */
+  --acm-mist: #f6f7fa; /* didnt have a designated name */
+  --acm-folder-start: #f1f6fe; /* didnt have a designated name */
+  --acm-folder-end: #f8faff; /* didnt have a designated name */
 }
 
 @theme inline {
@@ -23,6 +26,9 @@
   --color-acm-border: var(--acm-border);
   --color-acm-porcelain: var(--acm-porcelain);
   --color-acm-ice: var(--acm-ice);
+  --color-acm-mist: var(--acm-mist);
+  --color-acm-folder-start: var(--acm-folder-start);
+  --color-acm-folder-end: var(--acm-folder-end);
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-space-grotesk);
   --font-mono: var(--font-geist-mono);

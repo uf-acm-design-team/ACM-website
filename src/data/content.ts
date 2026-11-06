@@ -60,13 +60,6 @@ export const OFFICERS: Officer[] = [
   { name: "Officer Name", role: "Events Coordinator" },
 ];
 
-export type Project = {
-  title: string;
-  description: string;
-  tech: string[];
-  href?: string;
-};
-
 export type Sponsor = {
   name: string;
   /** Path under /public, e.g. "/sponsors/accenture.svg" */
