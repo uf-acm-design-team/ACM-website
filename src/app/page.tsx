@@ -5,7 +5,7 @@ import About from "@/app/components/About/About";
 import Instagram from "@/app/components/Instagram/Instagram";
 import Officers from "@/app/components/Officers/Officers";
 import Projects from "@/app/components/Projects/Projects";
-import { PROJECTS } from "@/data/projects";
+import { PROJECTS, PROJECTS_HEADING, PROJECTS_SUBTITLE } from "@/data/projects";
 import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Footer from "@/app/components/Footer/Footer";
 
@@ -19,7 +19,7 @@ export default function Home() {
         <About />
         <Instagram />
         <Officers />
-        <Projects projects={PROJECTS} />
+        <Projects projects={PROJECTS} heading={PROJECTS_HEADING} subtitle={PROJECTS_SUBTITLE} />
         <WhyAcm />
       </main>
       <Footer />

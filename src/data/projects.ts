@@ -10,6 +10,9 @@ export type Project = {
     teamHref?: string;
 };
 
+export const PROJECTS_HEADING = "Projects";
+export const PROJECTS_SUBTITLE = "Projects from the UF ACM design team.";
+
 export const PROJECTS: Project[] = [
     { // Need to add team link if doing it
         id: "acm-website",
@@ -19,6 +22,8 @@ export const PROJECTS: Project[] = [
         tech: ["Next.js", "Tailwind CSS", "TypeScript"],
         image: "/projects/acm-website.png",
         imageAlt: "currently no photo decided",
+        websiteHref: "#",
+        teamHref: "#"
     },
     { // Need to add website and team link if doing it
         id: "acm-checkin",
@@ -38,4 +43,3 @@ export const PROJECTS: Project[] = [
         imageAlt: "currently no photo decided",
     }
 ];
-    
