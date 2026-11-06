@@ -99,25 +99,6 @@ export const INSTAGRAM_POSTS: InstagramPost[] = [
   { id: "post-3", alt: "ACM Instagram post" },
 ];
 
-// TODO: fill in real project details and links
-export const PROJECTS: Project[] = [
-  {
-    title: "ACM Website",
-    description: "The site you're looking at, designed and built by the ACM design team.",
-    tech: ["Next.js", "Tailwind CSS", "TypeScript"],
-  },
-  {
-    title: "Check-in App",
-    description: "A tool for checking members in at meetings and events.",
-    tech: ["TBD"],
-  },
-  {
-    title: "Student Tools",
-    description: "More member-built tools are coming soon.",
-    tech: ["TBD"],
-  },
-];
-
 export type WhyReason = {
   title: string;
   description: string;
