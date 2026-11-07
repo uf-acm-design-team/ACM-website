@@ -1,47 +1,52 @@
 @import "tailwindcss";
 
-/* Brand colors — add the rest of the Figma tokens here once the design is final. */
+/* Brand tokens from the "ACM Website FINAL MOCKUP" brand guide. Light only. */
 :root {
-  --background: #ffffff;
-  --foreground: #484447;
-  --primary: #670af2;
-  --panel: #6b2fbf;
+  --navy: #0b1533;
+  --muted: #596073;
+  --accent: #343acc;
+  --accent-foreground: #fcfcff;
+  --background: #fcfcff;
+  --surface: #ffffff;
+  --surface-tint: #f6f9fe;
+  --surface-muted: #f6f7fa;
+  --surface-lavender: #f0edff;
+  --border: #d7d8e4;
+  --border-strong: rgb(0 0 0 / 0.2);
+  --icon-soft: #b9c8e4;
+  --placeholder: #b6bfd7;
 
-  --light-primary-foreground: #838383;
-  --blue-foreground: #170a4d;
-  --red-foreground: #d11111;
-
-  --accenture: #bd00ff;
-  --datadog: #632ca6;
-
-  --accent: #6b2fbf;
-  --accent-foreground: #ffffff;
+  --indigo: #696ef7;
+  --violet: #6655ed;
+  --sky: #8dc3f9;
+  --aqua: #ccedfa;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --color-primary: var(--primary);
-  --color-panel: var(--panel);
-
-  --color-light-primary-foreground: var(--light-primary-foreground);
-  --color-blue-foreground: var(--blue-foreground);
-  --color-red-foreground: var(--red-foreground);
-
-  --color-accenture: var(--accenture);
-  --color-datadog: var(--datadog);
-
+  --color-navy: var(--navy);
+  --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-tint: var(--surface-tint);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-lavender: var(--surface-lavender);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-icon-soft: var(--icon-soft);
+  --color-placeholder: var(--placeholder);
 
-  --font-sans: var(--font-host-grotesk);
-  --font-display: var(--font-host-grotesk);
-  --font-poppins: var(--font-poppins-loaded);
-  --font-mono: var(--font-jetbrains-mono);
+  --color-indigo: var(--indigo);
+  --color-violet: var(--violet);
+  --color-sky: var(--sky);
+  --color-aqua: var(--aqua);
+
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-space-grotesk);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--navy);
 }
