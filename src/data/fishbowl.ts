@@ -1,6 +1,6 @@
 import type { FishbowlProps } from "@/app/components/Fishbowl/fishbowl";
 
-export const WHY_ACM: FishbowlProps = {
+export const FISHBOWL: FishbowlProps = {
   heading: "Dive into the Fishbowl",
   intro:
     "A real room, and a community beyond it. Come for a workshop. Stay for the conversations, the games, and the people you’ll want to build with.",

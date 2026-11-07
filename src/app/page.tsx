@@ -7,7 +7,7 @@ import Officers from "@/app/components/Officers/Officers";
 import Projects from "@/app/components/Projects/Projects";
 import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Fishbowl from "@/app/components/Fishbowl/fishbowl";
-import { WHY_ACM } from "@/data/whyAcm";
+import { FISHBOWL } from "@/data/fishbowl";
 import Footer from "@/app/components/Footer/Footer";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
         <Hero />
         <Sponsors />
         <About />
-        <Fishbowl {...WHY_ACM} />
+        <Fishbowl {...FISHBOWL} />
         <Instagram />
         <Officers />
         <Projects />
