@@ -7,6 +7,8 @@ import Officers from "@/app/components/Officers/Officers";
 import Projects from "@/app/components/Projects/Projects";
 import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Footer from "@/app/components/Footer/Footer";
+import GetInvolved from "@/app/components/GetInvolved/GetInvolved";
+import { GET_INVOLVED } from "@/data/getInvolved";
 
 export default function Home() {
   return (
@@ -20,6 +22,7 @@ export default function Home() {
         <Officers />
         <Projects />
         <WhyAcm />
+        <GetInvolved {...GET_INVOLVED} />
       </main>
       <Footer />
     </>
