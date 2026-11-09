@@ -23,7 +23,7 @@ export default function TabShape({ active, offset }: TabShapeProps) {
         {!active && <path d={TAB_PATH} className="fill-surface-muted" />}
         <path
           d="M0.5 56V16C0.5 5.6 5.6 0.5 16 0.5H266C284 0.5 314 55.5 336 55.5"
-          className="stroke-border group-focus-visible:stroke-navy group-focus-visible:stroke-2"
+          className="stroke-border group-focus-visible:stroke-navy"
         />
       </svg>
     </>

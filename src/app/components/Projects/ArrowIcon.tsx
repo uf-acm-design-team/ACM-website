@@ -4,7 +4,7 @@ export default function ArrowIcon() {
         <path
           d="M4.16667 15.8333L15.8333 4.16667M15.8333 15.8333V4.16667H4.16667"
           stroke="currentColor"
-          strokeWidth={1.33333}
+          strokeWidth={1}
           strokeLinecap="round"
           strokeLinejoin="round"
         />

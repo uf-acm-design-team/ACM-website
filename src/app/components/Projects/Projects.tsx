@@ -47,7 +47,7 @@ export default function Projects({ projects, heading, subtitle }: ProjectsProps)
         <p className="text-lg text-muted">{subtitle}</p>
       </div>
 
-      <div className="@container">
+      <div className="group/folder @container">
         <div role="tablist" aria-label="Projects" onKeyDown={handleKeyDown} className="flex">
           {projects.map((project, index) => {
             const isActive = project.id === activeID;
@@ -77,11 +77,10 @@ export default function Projects({ projects, heading, subtitle }: ProjectsProps)
           role="tabpanel"
           id="project-panel"
           aria-labelledby={`tab-${activeID}`}
-          tabIndex={0}
           className="
           relative z-10 -mt-px rounded-3xl border border-border bg-linear-to-r 
           from-folder-start via-background via-40% to-folder-end px-10 
-          pt-8 pb-12 group focus-visible:outline-hidden rounded-tl-none"
+          pt-8 pb-12 rounded-tl-none group-has-[[role=tab]:focus-visible]/folder:border-navy"
         >
           <ProjectPanel project={activeProject} />
         </div>

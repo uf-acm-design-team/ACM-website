@@ -30,7 +30,7 @@ export default function ProjectPanel({ project }: ProjectPanelProps) {
             ))}
           </ul>
         )}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-1">
             {project.websiteHref && (
             <a href={project.websiteHref} target="_blank" rel="noopener noreferrer" 
                 className="inline-flex h-12 items-center gap-5 rounded-lg bg-navy px-5 font-medium text-accent-foreground">
@@ -40,7 +40,7 @@ export default function ProjectPanel({ project }: ProjectPanelProps) {
             )}
             {project.teamHref && (
             <a href={project.teamHref} target="_blank" rel="noopener noreferrer"
-            className="inline-flex h-12 items-center gap-2.5 text-[17px] font-medium text-navy">
+            className="inline-flex h-12 items-center gap-2.5 rounded-lg px-5 text-[17px] font-medium text-navy">
                 Meet the team
                 <ArrowIcon />
             </a>
