@@ -7,16 +7,20 @@ import Officers from "@/app/components/Officers/Officers";
 import Projects from "@/app/components/Projects/Projects";
 import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Footer from "@/app/components/Footer/Footer";
+import { ABOUT } from "@/data/about";
+import { getInstagram } from "@/data/instagram";
 
-export default function Home() {
+export default async function Home() {
+  const instagram = await getInstagram();
+
   return (
     <>
       <Navbar />
       <main className="flex-1">
         <Hero />
         <Sponsors />
-        <About />
-        <Instagram />
+        <About content={ABOUT} />
+        <Instagram content={instagram} />
         <Officers />
         <Projects />
         <WhyAcm />
