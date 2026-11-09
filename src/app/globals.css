@@ -1,40 +1,68 @@
 @import "tailwindcss";
 
-/* Brand colors — add the rest of the Figma tokens here once the design is final. */
+/* Brand tokens from the "ACM Website FINAL MOCKUP" brand guide. Light only. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --accent: #6b2fbf;
-  --accent-foreground: #ffffff;
-  --acm-navy: #0b1533;
-  --acm-muted: #596073;
-  --acm-border: #d7d8e4;
-  --acm-porcelain: #fcfcff;
-  --acm-ice: #f6f9ff; /* didnt have a designated name */
-  --acm-mist: #f6f7fa; /* didnt have a designated name */
-  --acm-folder-start: #f1f6fe; /* didnt have a designated name */
-  --acm-folder-end: #f8faff; /* didnt have a designated name */
+  --navy: #0b1533;
+  --muted: #596073;
+  --accent: #343acc;
+  --accent-foreground: #fcfcff;
+  --background: #fcfcff;
+  --surface: #ffffff;
+  --surface-tint: #f6f9fe;
+  --surface-muted: #f6f7fa;
+  --surface-lavender: #f0edff;
+  --border: #d7d8e4;
+  --border-strong: rgb(0 0 0 / 0.2);
+  --icon-soft: #b9c8e4;
+  --placeholder: #b6bfd7;
+
+  --indigo: #696ef7;
+  --violet: #6655ed;
+  --sky: #8dc3f9;
+  --aqua: #ccedfa;
+
+  /* Projects folder gradient (left and right ends; the middle stop is --background). */
+  --folder-start: #f1f6fe;
+  --folder-end: #f8faff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-navy: var(--navy);
+  --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-acm-navy: var(--acm-navy);
-  --color-acm-muted: var(--acm-muted);
-  --color-acm-border: var(--acm-border);
-  --color-acm-porcelain: var(--acm-porcelain);
-  --color-acm-ice: var(--acm-ice);
-  --color-acm-mist: var(--acm-mist);
-  --color-acm-folder-start: var(--acm-folder-start);
-  --color-acm-folder-end: var(--acm-folder-end);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-tint: var(--surface-tint);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-lavender: var(--surface-lavender);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-icon-soft: var(--icon-soft);
+  --color-placeholder: var(--placeholder);
+
+  --color-indigo: var(--indigo);
+  --color-violet: var(--violet);
+  --color-sky: var(--sky);
+  --color-aqua: var(--aqua);
+
+  --color-folder-start: var(--folder-start);
+  --color-folder-end: var(--folder-end);
+
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-space-grotesk);
-  --font-mono: var(--font-geist-mono);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+@layer base {
+  *, ::before, ::after, ::backdrop, ::file-selector-button {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-navy;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium;
+  }
 }

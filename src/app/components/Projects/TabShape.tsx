@@ -11,7 +11,7 @@ export default function TabShape({ active, offset }: TabShapeProps) {
       {active && (
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-r from-acm-folder-start via-acm-porcelain via-40% to-acm-folder-end"
+          className="absolute inset-0 bg-linear-to-r from-folder-start via-background via-40% to-folder-end"
           style={{
             clipPath: `path("${TAB_PATH}")`,
             backgroundSize: "100cqw 100%",
@@ -20,10 +20,10 @@ export default function TabShape({ active, offset }: TabShapeProps) {
         />
       )}
       <svg className="absolute inset-0 overflow-visible" width="336" height="56" viewBox="0 0 336 56" fill="none" aria-hidden="true">
-        {!active && <path d={TAB_PATH} className="fill-acm-mist" />}
+        {!active && <path d={TAB_PATH} className="fill-surface-muted" />}
         <path
           d="M0.5 56V16C0.5 5.6 5.6 0.5 16 0.5H266C284 0.5 314 55.5 336 55.5"
-          className="stroke-acm-border group-focus-visible:stroke-acm-navy group-focus-visible:stroke-2"
+          className="stroke-border group-focus-visible:stroke-navy group-focus-visible:stroke-2"
         />
       </svg>
     </>

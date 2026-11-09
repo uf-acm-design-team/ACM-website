@@ -41,10 +41,10 @@ export default function Projects({ projects, heading, subtitle }: ProjectsProps)
   return (
     <section id="projects" className="mx-auto flex max-w-[1440px] scroll-mt-20 flex-col gap-10 px-16 pt-24 pb-20">
       <div className="flex items-end justify-between">
-        <h2 className="font-display text-5xl font-medium leading-[1.15] tracking-[-0.02em] text-acm-navy">
+        <h2 className="font-display text-5xl font-medium leading-[1.15] tracking-[-0.02em] text-navy">
           {heading}
         </h2>
-        <p className="text-lg text-acm-muted">{subtitle}</p>
+        <p className="text-lg text-muted">{subtitle}</p>
       </div>
 
       <div className="@container">
@@ -64,7 +64,7 @@ export default function Projects({ projects, heading, subtitle }: ProjectsProps)
                 onClick={() => setActiveID(project.id)}
                 style={{ zIndex: isActive ? 20 : projects.length - index }}
                 className={
-                  `group relative flex h-14 w-[336px] shrink-0 items-center font-display text-lg font-medium focus-visible:outline-hidden ${index > 0 ? "-ml-4" : ""} ${isActive ? "text-acm-navy" : "translate-y-1.5 pb-1.5 text-acm-muted"}`
+                  `group relative flex h-14 w-[336px] shrink-0 items-center font-display text-lg font-medium focus-visible:outline-hidden ${index > 0 ? "-ml-4" : ""} ${isActive ? "text-navy" : "translate-y-1.5 pb-1.5 text-muted"}`
                 }>
                 <TabShape active={isActive} offset={index * 320} />
                 <span className="relative pl-7">{project.tabLabel}</span>
@@ -79,8 +79,8 @@ export default function Projects({ projects, heading, subtitle }: ProjectsProps)
           aria-labelledby={`tab-${activeID}`}
           tabIndex={0}
           className="
-          relative z-10 -mt-px rounded-3xl border border-acm-border bg-linear-to-r 
-          from-acm-folder-start via-acm-porcelain via-40% to-acm-folder-end px-10 
+          relative z-10 -mt-px rounded-3xl border border-border bg-linear-to-r 
+          from-folder-start via-background via-40% to-folder-end px-10 
           pt-8 pb-12 group focus-visible:outline-hidden rounded-tl-none"
         >
           <ProjectPanel project={activeProject} />
