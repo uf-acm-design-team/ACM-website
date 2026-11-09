@@ -7,6 +7,7 @@ import Officers from "@/app/components/Officers/Officers";
 import Projects from "@/app/components/Projects/Projects";
 import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Footer from "@/app/components/Footer/Footer";
+import { ABOUT } from "@/data/about";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Sponsors />
-        <About />
+        <About content={ABOUT} />
         <Instagram />
         <Officers />
         <Projects />
