@@ -9,6 +9,8 @@ import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Fishbowl from "@/app/components/Fishbowl/fishbowl";
 import { FISHBOWL } from "@/data/fishbowl";
 import Footer from "@/app/components/Footer/Footer";
+import GetInvolved from "@/app/components/GetInvolved/GetInvolved";
+import { GET_INVOLVED } from "@/data/getInvolved";
 
 export default function Home() {
   return (
@@ -23,6 +25,7 @@ export default function Home() {
         <Officers />
         <Projects />
         <WhyAcm />
+        <GetInvolved {...GET_INVOLVED} />
       </main>
       <Footer />
     </>
