@@ -91,7 +91,7 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
       <nav
         aria-label="Primary navigation"
         className={`mx-auto grid max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-5 transition-[height] duration-300 ease-out motion-reduce:transition-none sm:px-8 lg:px-20 ${
-          isScrolled ? "h-[72px]" : "h-24"
+          isScrolled ? "h-[72px]" : "h-[72px] md:h-24"
         }`}
       >
         <div className="hidden h-11 w-full items-center gap-8 justify-self-start md:flex">
@@ -101,26 +101,26 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
         <a
           href={brand.href}
           aria-label={brand.accessibleLabel}
-          className="col-start-1 inline-flex items-center gap-3 justify-self-start rounded-sm text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 md:col-start-2 md:justify-self-center"
+          className="col-start-2 row-start-1 inline-flex items-center gap-2 justify-self-center rounded-sm text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 md:gap-3"
         >
           <Image
             src={acmFish}
             alt=""
             width={76}
             height={31}
-            className={`w-auto transition-[height] duration-300 ease-out motion-reduce:transition-none ${isScrolled ? "h-[19px]" : "h-[30px]"}`}
+            className={`h-[17px] w-auto transition-[height] duration-300 ease-out motion-reduce:transition-none ${isScrolled ? "md:h-[19px]" : "md:h-[30px]"}`}
           />
-          <span className={`font-display font-medium transition-[font-size,line-height] duration-300 ease-out motion-reduce:transition-none ${isScrolled ? "text-[25px] leading-8" : "text-[40px] leading-[48px]"}`}>
+          <span className={`font-display text-[27px] font-medium leading-[31px] transition-[font-size,line-height] duration-300 ease-out motion-reduce:transition-none ${isScrolled ? "md:text-[25px] md:leading-8" : "md:text-[40px] md:leading-[48px]"}`}>
             {brand.name}
           </span>
         </a>
 
         <a
           href={checkInLink.href}
-          className="hidden h-11 w-36 items-center justify-center gap-2.5 justify-self-end rounded-lg border border-border bg-background px-5 py-2.5 text-base font-medium text-navy transition-colors duration-200 hover:bg-surface-tint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 motion-reduce:transition-none md:inline-flex"
+          className="col-start-3 row-start-1 inline-flex items-center justify-center justify-self-end rounded-lg border border-border bg-background px-3 py-2.5 text-sm font-medium leading-[21px] text-navy transition-colors duration-200 hover:bg-surface-tint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 motion-reduce:transition-none md:h-11 md:w-36 md:gap-2.5 md:px-5 md:text-base md:leading-6"
         >
-          <span className="flex-1">{checkInLink.label}</span>
-          <BroadcastIcon />
+          <span className="md:flex-1">{checkInLink.label}</span>
+          <span className="hidden md:block"><BroadcastIcon /></span>
         </a>
 
         <button
@@ -130,7 +130,7 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setMenuOpen((current) => !current)}
-          className="col-start-3 inline-flex size-11 items-center justify-center justify-self-end rounded-lg border border-border bg-background/70 text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:hidden"
+          className="col-start-1 row-start-1 inline-flex size-11 items-center justify-center justify-self-start rounded-lg text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:hidden"
         >
           <MenuIcon open={menuOpen} />
         </button>
@@ -142,14 +142,6 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
             {links.map((link) => (
               <NavigationLink key={link.label} link={link} onClick={() => setMenuOpen(false)} />
             ))}
-            <a
-              href={checkInLink.href}
-              onClick={() => setMenuOpen(false)}
-              className="mt-1 inline-flex items-center justify-center gap-2.5 rounded-lg border border-border bg-background px-5 py-3 text-base font-medium text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
-            >
-              <span>{checkInLink.label}</span>
-              <BroadcastIcon />
-            </a>
           </div>
         </div>
       )}
