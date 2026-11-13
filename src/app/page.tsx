@@ -1,6 +1,7 @@
 import Navbar from "@/app/components/Navbar/Navbar";
 import Hero from "@/app/components/Hero/Hero";
 import Sponsors from "@/app/components/Sponsors/Sponsors";
+import { SPONSORS_SECTION } from "@/data/sponsors";
 import About from "@/app/components/About/About";
 import Instagram from "@/app/components/Instagram/Instagram";
 import Officers from "@/app/components/Officers/Officers";
@@ -14,7 +15,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <Sponsors />
+        <Sponsors {...SPONSORS_SECTION} />
         <About />
         <Instagram />
         <Officers />
