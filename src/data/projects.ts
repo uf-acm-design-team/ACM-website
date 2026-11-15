@@ -22,7 +22,6 @@ export const PROJECTS: Project[] = [
         tech: ["Next.js", "Tailwind CSS", "TypeScript"],
         image: "/projects/acm-website.png",
         imageAlt: "currently no photo decided",
-        websiteHref: "#",
         teamHref: "#"
     },
     { // Need to add website and team link if doing it
@@ -33,6 +32,8 @@ export const PROJECTS: Project[] = [
         tech: ["N/A"], // TODO: Need to ask paolvin abt tech used
         image: "/projects/acm-checkin.png",
         imageAlt: "currently no photo decided",
+        websiteHref: "#",
+        teamHref: "#"
     },
     { // Need to add website and team link if doing it
         id: "student-projects",
