@@ -18,29 +18,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Projects", href: "#projects" },
 ];
 
-export type Pillar = {
-  title: string;
-  description: string;
-};
-
-export const PILLARS: Pillar[] = [
-  {
-    title: "Professional Growth",
-    description:
-      "Workshops, resume reviews and industry talks that help members land internships and build careers in tech.",
-  },
-  {
-    title: "Open Source",
-    description:
-      "Build real software together. Members contribute to club projects and learn how collaborative development works.",
-  },
-  {
-    title: "Community",
-    description:
-      "A welcoming space to meet other students, find study partners and make friends who share your interests.",
-  },
-];
-
 export type Officer = {
   name: string;
   role: string;
@@ -66,19 +43,6 @@ export type Project = {
   tech: string[];
   href?: string;
 };
-
-export type Sponsor = {
-  name: string;
-  /** Path under /public, e.g. "/sponsors/accenture.svg" */
-  logo?: string;
-};
-
-export const SPONSORS: Sponsor[] = [
-  { name: "Accenture" },
-  { name: "Bloomberg" },
-  { name: "Datadog" },
-  { name: "Roblox" },
-];
 
 // TODO: replace with the real Instagram profile URL
 export const INSTAGRAM_URL = "https://www.instagram.com/uf.acm/";

@@ -10,6 +10,7 @@ import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Fishbowl from "@/app/components/Fishbowl/fishbowl";
 import { FISHBOWL } from "@/data/fishbowl";
 import Footer from "@/app/components/Footer/Footer";
+import { ABOUT } from "@/data/about";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Sponsors {...SPONSORS_SECTION} />
-        <About />
+        <About content={ABOUT} />
         <Fishbowl {...FISHBOWL} />
         <Instagram />
         <Officers />
