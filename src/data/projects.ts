@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
         tabLabel: "ACM Check-In",
         title: "ACM Check-In",
         description: "Making check-in at every club event simple.",
-        tech: ["N/A"], // TODO: Need to ask paolvin abt tech used
+        tech: ["Next.js","Expo","Supabase"], // TODO: Need to ask paolvin abt tech used
         image: "/projects/acm-checkin.png",
         imageAlt: "currently no photo decided",
         websiteHref: "#",
