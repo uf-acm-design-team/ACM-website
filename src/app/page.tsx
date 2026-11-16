@@ -8,6 +8,7 @@ import Projects from "@/app/components/Projects/Projects";
 import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Fishbowl from "@/app/components/Fishbowl/fishbowl";
 import { FISHBOWL } from "@/data/fishbowl";
+import * as OFFICERS from "@/data/officers";
 import Footer from "@/app/components/Footer/Footer";
 
 export default function Home() {
@@ -20,7 +21,17 @@ export default function Home() {
         <About />
         <Fishbowl {...FISHBOWL} />
         <Instagram />
-        <Officers />
+        <Officers
+          heading={OFFICERS.OFFICERS_HEADING}
+          year={OFFICERS.OFFICERS_YEAR}
+          executiveLabel={OFFICERS.EXECUTIVE_BOARD_LABEL}
+          executiveBoard={OFFICERS.EXECUTIVE_BOARD}
+          operationsLabel={OFFICERS.OPERATIONS_TEAM_LABEL}
+          operationsTeam={OFFICERS.OPERATIONS_TEAM}
+          teamFilters={OFFICERS.TEAM_FILTERS}
+          teamOfficers={OFFICERS.TEAM_OFFICERS}
+          emptyMessage={OFFICERS.TEAM_EMPTY_MESSAGE}
+        />
         <Projects />
         <WhyAcm />
       </main>

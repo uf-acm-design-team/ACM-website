@@ -1,38 +1,80 @@
-import Image from "next/image";
-import { OFFICERS } from "@/data/content";
+import type { Officer, OfficerTeam, TeamFilter } from "@/data/officers";
+import OfficerGroup from "./OfficerGroup";
 
-// TODO: style to match Figma
-export default function Officers() {
+type OfficersProps = {
+  heading: string;
+  year: string;
+  executiveLabel: string;
+  executiveBoard: Officer[];
+  operationsLabel: string;
+  operationsTeam: Officer[];
+  teamFilters: TeamFilter[];
+  teamOfficers: Officer[];
+  emptyMessage: string;
+};
+
+// Filter button looks from Figma. Selected is filled navy; the rest are outlined.
+const FILTER_BUTTON = "h-14 rounded-lg border px-9 leading-[1.4]";
+const FILTER_SELECTED = "border-navy bg-navy text-accent-foreground";
+const FILTER_UNSELECTED = "border-border bg-background text-navy";
+
+export default function Officers({
+  heading,
+  year,
+  executiveLabel,
+  executiveBoard,
+  operationsLabel,
+  operationsTeam,
+  teamFilters,
+  teamOfficers,
+  // TODO (UAWR2-91): also take emptyMessage here once you build the empty state.
+}: OfficersProps) {
+  // TODO (UAWR2-91): make this a client component and turn selectedTeam into state,
+  // starting on the first filter, so clicking a button changes it.
+  const selectedTeam: OfficerTeam = teamFilters[0].id;
+  const selectedFilter = teamFilters.find((filter) => filter.id === selectedTeam) ?? teamFilters[0];
+
+  // TODO (UAWR2-91): only keep the officers whose team matches selectedTeam.
+  const visibleTeam = teamOfficers;
+
   return (
-    <section id="officers" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-16">
-      <h2>Meet the Officers</h2>
-
-      <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-        {OFFICERS.map((officer, i) => (
-          <div key={`${officer.role}-${i}`} className="border p-4">
-            {officer.image ? (
-              <Image src={officer.image} alt={officer.name} width={112} height={112} />
-            ) : (
-              // Placeholder until headshots are added
-              <div className="h-28 w-28 bg-accent" />
-            )}
-            <h3>{officer.name}</h3>
-            <p>{officer.role}</p>
-            <div className="flex gap-4">
-              {officer.github && (
-                <a href={officer.github} target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              )}
-              {officer.linkedin && (
-                <a href={officer.linkedin} target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
+    <section
+      id="officers"
+      className="mx-auto flex max-w-[1440px] scroll-mt-20 flex-col gap-12 px-6 py-14 md:px-10 lg:px-22 lg:py-24"
+    >
+      {/* The title stays centered; from lg up the year sits at the bottom-right of the header. */}
+      <div className="relative flex flex-col items-center gap-4 text-center">
+        <h2 className="font-display text-[40px] leading-[46px] tracking-[-0.02em] text-navy">{heading}</h2>
+        <p className="font-display text-[26px] leading-[34px] font-medium tracking-[-0.01em] text-navy lg:absolute lg:right-0 lg:bottom-0">
+          {year}
+        </p>
       </div>
+
+      <OfficerGroup label={executiveLabel} officers={executiveBoard} />
+      <OfficerGroup label={operationsLabel} officers={operationsTeam} />
+
+      <div className="flex flex-wrap justify-center gap-4">
+        {teamFilters.map((filter) => {
+          const isSelected = filter.id === selectedTeam;
+          return (
+            // TODO (UAWR2-91): clicking selects this team, and screen readers need to know which one is selected.
+            <button
+              key={filter.id}
+              type="button"
+              className={`${FILTER_BUTTON} ${isSelected ? FILTER_SELECTED : FILTER_UNSELECTED}`}
+            >
+              {filter.label}
+            </button>
+          );
+        })}
+      </div>
+
+      <OfficerGroup
+        label={selectedFilter.label}
+        officers={visibleTeam}
+        // TODO (UAWR2-91): show emptyMessage here when the selected team has nobody yet.
+        empty={null}
+      />
     </section>
   );
 }
