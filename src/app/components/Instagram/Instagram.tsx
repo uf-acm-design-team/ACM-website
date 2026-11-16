@@ -43,7 +43,7 @@ export default function Instagram({ content }: InstagramProps) {
       className="scroll-mt-20 px-5 pb-14 sm:px-10 xl:px-16 xl:pb-20"
     >
       {/* Top padding lives inside the wrapper so its border is Figma's 1312-wide section hairline. */}
-      <div className="mx-auto flex max-w-[1312px] flex-col gap-6 border-t border-border-subtle pt-16 sm:gap-8 sm:pt-20 xl:pt-24">
+      <div className="mx-auto flex max-w-[1312px] flex-col gap-6 border-t border-border pt-16 sm:gap-8 sm:pt-20 xl:pt-24">
         <header className="flex flex-col gap-3 sm:gap-4">
           <h2
             id="instagram-heading"
@@ -51,13 +51,13 @@ export default function Instagram({ content }: InstagramProps) {
           >
             {heading}
           </h2>
-          <p className="max-w-[720px] font-body text-base leading-6 text-muted sm:text-[19px] sm:leading-[1.45]">
+          <p className="max-w-[720px] font-sans text-base leading-6 text-muted sm:text-[19px] sm:leading-[1.45]">
             {subtext}
           </p>
         </header>
 
         {/* Profile card */}
-        <div className="flex items-center gap-4 rounded-xl bg-surface p-4 sm:min-h-[120px] sm:gap-5 sm:p-6">
+        <div className="flex items-center gap-4 rounded-xl bg-surface-tint p-4 sm:min-h-[120px] sm:gap-5 sm:p-6">
           {profile.avatar ? (
             <Image
               src={profile.avatar}
@@ -79,7 +79,7 @@ export default function Instagram({ content }: InstagramProps) {
             <p className="font-display text-[22px] leading-[1.12] font-medium tracking-[-0.01em] text-navy sm:text-[28px]">
               {profile.name}
             </p>
-            <p className="flex items-center gap-2 font-body text-sm leading-6 text-muted sm:text-base">
+            <p className="flex items-center gap-2 font-sans text-sm leading-6 text-muted sm:text-base">
               <InstagramGlyph />
               <span className="truncate">
                 @{profile.handle}
@@ -93,7 +93,7 @@ export default function Instagram({ content }: InstagramProps) {
             href={profile.profileUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 shrink-0 items-center justify-center rounded-lg bg-instagram px-5 font-body text-base leading-6 font-medium text-white sm:w-28 sm:px-0"
+            className="inline-flex h-10 shrink-0 items-center justify-center rounded-lg bg-instagram px-5 font-sans text-base leading-6 font-medium text-white sm:w-28 sm:px-0"
           >
             {followLabel}
           </a>

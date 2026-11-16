@@ -75,7 +75,7 @@ export default function About({ content }: AboutProps) {
         >
           {heading}
         </h2>
-        <p className="mx-auto mt-8 text-center font-body text-base leading-6 text-muted xl:mt-5 xl:max-w-[820px] xl:text-[20px] xl:leading-[30px]">
+        <p className="mx-auto mt-8 font-sans text-base leading-6 text-muted xl:mt-5 xl:max-w-[820px] xl:text-center xl:text-[20px] xl:leading-[30px]">
           {body}
         </p>
 
@@ -124,7 +124,7 @@ export default function About({ content }: AboutProps) {
                 >
                   {title}
                 </h3>
-                <p className="mt-2 font-body text-base leading-6 text-muted">{description}</p>
+                <p className="mt-2 font-sans text-base leading-6 text-muted">{description}</p>
               </li>
             ))}
           </ul>

@@ -43,7 +43,7 @@ function PictureIcon() {
       viewBox="0 0 44 36"
       aria-hidden="true"
       focusable="false"
-      className="h-9 w-11 fill-none stroke-border-subtle"
+      className="h-9 w-11 fill-none stroke-icon-soft"
       strokeWidth="1.5"
     >
       <rect x="2" y="2" width="40" height="32" rx="5" />
@@ -127,7 +127,7 @@ export default function InstagramCarousel({
   };
 
   const arrowClass =
-    "flex size-14 items-center justify-center rounded-full border border-border-subtle bg-surface transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean disabled:cursor-default disabled:opacity-40";
+    "flex size-14 items-center justify-center rounded-full border border-border bg-surface-tint transition-opacity focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:cursor-default disabled:opacity-40";
 
   return (
     <div className="flex flex-col gap-6 sm:gap-8">
@@ -142,7 +142,7 @@ export default function InstagramCarousel({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={post.alt}
-              className="relative flex aspect-square flex-col items-center justify-center gap-4 overflow-hidden rounded-xl border border-border-subtle bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean"
+              className="relative flex aspect-square flex-col items-center justify-center gap-4 overflow-hidden rounded-xl border border-border bg-surface-tint focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               {post.image ? (
                 <Image
@@ -155,7 +155,7 @@ export default function InstagramCarousel({
               ) : (
                 <>
                   <PictureIcon />
-                  <span className="font-body text-base leading-6 text-muted">{placeholderLabel}</span>
+                  <span className="font-sans text-base leading-6 text-muted">{placeholderLabel}</span>
                 </>
               )}
             </a>
@@ -164,7 +164,7 @@ export default function InstagramCarousel({
       </ul>
 
       {/* Touch-size screens (820 / 402 frames): swipe hint instead of controls. */}
-      <p className="font-body text-base leading-6 text-muted lg:hidden">
+      <p className="font-sans text-base leading-6 text-muted lg:hidden">
         {swipeHint} <span aria-hidden="true">→</span>
       </p>
 
@@ -174,7 +174,7 @@ export default function InstagramCarousel({
           {Array.from({ length: state.count }, (_, i) => (
             <span key={i} className="flex h-11 w-12 items-center">
               <span
-                className={`h-0.5 w-full transition-colors ${i === state.index ? "bg-ocean" : "bg-indigo"}`}
+                className={`h-0.5 w-full transition-colors ${i === state.index ? "bg-accent" : "bg-indigo"}`}
               />
             </span>
           ))}
