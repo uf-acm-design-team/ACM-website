@@ -41,25 +41,6 @@ export const PILLARS: Pillar[] = [
   },
 ];
 
-export type Officer = {
-  name: string;
-  role: string;
-  /** Path under /public, e.g. "/officers/jane-doe.jpg" */
-  image?: string;
-  github?: string;
-  linkedin?: string;
-};
-
-// TODO: replace with the real officer roster
-export const OFFICERS: Officer[] = [
-  { name: "Officer Name", role: "President" },
-  { name: "Officer Name", role: "Vice President" },
-  { name: "Officer Name", role: "Treasurer" },
-  { name: "Officer Name", role: "Secretary" },
-  { name: "Officer Name", role: "Design Lead" },
-  { name: "Officer Name", role: "Events Coordinator" },
-];
-
 export type Sponsor = {
   name: string;
   /** Path under /public, e.g. "/sponsors/accenture.svg" */
