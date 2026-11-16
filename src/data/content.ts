@@ -18,60 +18,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Projects", href: "#projects" },
 ];
 
-export type Pillar = {
-  title: string;
-  description: string;
-};
-
-export const PILLARS: Pillar[] = [
-  {
-    title: "Professional Growth",
-    description:
-      "Workshops, resume reviews and industry talks that help members land internships and build careers in tech.",
-  },
-  {
-    title: "Open Source",
-    description:
-      "Build real software together. Members contribute to club projects and learn how collaborative development works.",
-  },
-  {
-    title: "Community",
-    description:
-      "A welcoming space to meet other students, find study partners and make friends who share your interests.",
-  },
-];
-
-export type Sponsor = {
-  name: string;
-  /** Path under /public, e.g. "/sponsors/accenture.svg" */
-  logo?: string;
-};
-
-export const SPONSORS: Sponsor[] = [
-  { name: "Accenture" },
-  { name: "Bloomberg" },
-  { name: "Datadog" },
-  { name: "Roblox" },
-];
-
-// TODO: replace with the real Instagram profile URL
 export const INSTAGRAM_URL = "https://www.instagram.com/uf.acm/";
-
-export const INSTAGRAM_HANDLE = "uf.acm";
-
-export type InstagramPost = {
-  id: string;
-  alt: string;
-  /** Path under /public, e.g. "/instagram/post-1.jpg" */
-  image?: string;
-};
-
-// TODO: replace placeholders with real posts
-export const INSTAGRAM_POSTS: InstagramPost[] = [
-  { id: "post-1", alt: "ACM Instagram post" },
-  { id: "post-2", alt: "ACM Instagram post" },
-  { id: "post-3", alt: "ACM Instagram post" },
-];
 
 export type WhyReason = {
   title: string;
