@@ -20,7 +20,7 @@ export type SponsorsProps = {
 const logoPlacement = ["lg:pt-[38.5px]", "lg:pt-[69.7px]", "lg:pt-[23.79px]", "lg:pt-0"] as const;
 
 export default function Sponsors({ heading, description, action, logos }: SponsorsProps) {
-  const actionClassName = "inline-flex h-10 w-[194px] shrink-0 items-center justify-between rounded-lg border border-border bg-background px-5 text-base leading-[1.4] font-medium text-navy focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent";
+  const actionClassName = "inline-flex h-10 shrink-0 items-center gap-2 rounded-lg border border-border bg-background px-5 text-base leading-[1.4] font-medium text-navy focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent";
   const actionContent = (
     <>
       <span className="whitespace-nowrap">{action.label}</span>
@@ -45,7 +45,7 @@ export default function Sponsors({ heading, description, action, logos }: Sponso
         <ul className="mx-auto grid max-w-[1173px] grid-cols-2 items-center gap-x-8 gap-y-6 px-6 py-6 md:px-10 lg:h-42 lg:grid-cols-[284fr_284fr_183fr_284fr] lg:items-start lg:gap-x-[46px] lg:px-0 lg:py-0">
           {logos.map((logo, index) => (
             <li key={logo.name} className={`flex min-w-0 items-center justify-center lg:items-start ${logoPlacement[index]}`}>
-              <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} className="h-auto max-w-full" />
+              <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} className="h-auto max-h-16 w-auto max-w-full lg:max-h-none" />
             </li>
           ))}
         </ul>

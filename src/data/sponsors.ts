@@ -5,7 +5,7 @@ export const SPONSORS_SECTION: SponsorsProps = {
   description: "Supporting the next wave of builders.",
   action: {
     label: "Become a Sponsor",
-    href: "/sponser",
+    href: "/sponsors",
   },
   logos: [
     { name: "Accenture", src: "/sponsors/accenture.svg", alt: "Accenture", width: 284, height: 75 },
