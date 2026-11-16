@@ -14,8 +14,9 @@ type OfficersProps = {
 };
 
 // Filter button looks from Figma. Selected is filled navy; the rest are outlined.
-const FILTER_BUTTON = "h-14 rounded-lg border px-9 leading-[1.4]";
-const FILTER_SELECTED = "border-navy bg-navy text-accent-foreground";
+const FILTER_BUTTON = "h-14 rounded-lg border px-9 text-[17px] font-medium leading-[1.4]";
+// The soft navy-tinted shadow lifts the selected button slightly, so it reads as the active one.
+const FILTER_SELECTED = "border-navy bg-navy text-accent-foreground shadow-md shadow-navy/15";
 const FILTER_UNSELECTED = "border-border bg-background text-navy";
 
 export default function Officers({
@@ -40,11 +41,11 @@ export default function Officers({
   return (
     <section
       id="officers"
-      className="mx-auto flex max-w-[1440px] scroll-mt-20 flex-col gap-12 px-6 py-14 md:px-10 lg:px-22 lg:py-24"
+      className="mx-auto flex max-w-[1440px] scroll-mt-20 flex-col gap-12 px-6 py-14 md:px-10 lg:px-16 lg:py-24"
     >
       {/* The title stays centered; from lg up the year sits at the bottom-right of the header. */}
       <div className="relative flex flex-col items-center gap-4 text-center">
-        <h2 className="font-display text-[40px] leading-[46px] tracking-[-0.02em] text-navy">{heading}</h2>
+        <h2 className="font-display text-5xl leading-[1.15] tracking-[-0.02em] text-navy">{heading}</h2>
         <p className="font-display text-[26px] leading-[34px] font-medium tracking-[-0.01em] text-navy lg:absolute lg:right-0 lg:bottom-0">
           {year}
         </p>
