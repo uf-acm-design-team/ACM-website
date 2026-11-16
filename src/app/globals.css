@@ -23,6 +23,10 @@
   --ultraviolet: #6433ff;
 
   --instagram: #0095f5;
+
+  /* Projects folder gradient (left and right ends; the middle stop is --background). */
+  --folder-start: #f1f6fe;
+  --folder-end: #f8faff;
 }
 
 @theme inline {
@@ -47,6 +51,9 @@
   --color-ultraviolet: var(--ultraviolet);
 
   --color-instagram: var(--instagram);
+
+  --color-folder-start: var(--folder-start);
+  --color-folder-end: var(--folder-end);
 
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-space-grotesk);
