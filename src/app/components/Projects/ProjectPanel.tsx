@@ -23,7 +23,7 @@ export default function ProjectPanel({ project }: ProjectPanelProps) {
         <p className="text-muted">Placeholder image</p> {/* TODO: real image */}
       </div>
 
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 lg:col-start-2 lg:row-start-3 lg:flex-col lg:items-start lg:gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5 lg:col-start-2 lg:row-start-3 lg:gap-y-4">
         {project.tech && (
           <ul className="flex flex-wrap gap-2">
             {project.tech.map((tech) => (
@@ -33,7 +33,7 @@ export default function ProjectPanel({ project }: ProjectPanelProps) {
             ))}
           </ul>
         )}
-        <div className="-mr-3 ml-auto flex flex-wrap items-center gap-x-1 gap-y-2 lg:mr-0 lg:ml-0">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 lg:gap-x-6">
           {project.websiteHref && (
             <a
               href={project.websiteHref}
@@ -50,7 +50,7 @@ export default function ProjectPanel({ project }: ProjectPanelProps) {
               href={project.teamHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center gap-2.5 rounded-lg px-3 text-sm font-medium text-navy lg:px-5 lg:text-[17px]"
+              className="inline-flex h-12 items-center gap-2.5 rounded-lg text-sm font-medium text-navy focus-visible:outline-offset-4 lg:text-[17px]"
             >
               Meet the team
               <ArrowIcon />
