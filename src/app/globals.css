@@ -20,6 +20,9 @@
   --violet: #6655ed;
   --sky: #8dc3f9;
   --aqua: #ccedfa;
+  --ultraviolet: #6433ff;
+
+  --instagram: #0095f5;
 }
 
 @theme inline {
@@ -41,6 +44,9 @@
   --color-violet: var(--violet);
   --color-sky: var(--sky);
   --color-aqua: var(--aqua);
+  --color-ultraviolet: var(--ultraviolet);
+
+  --color-instagram: var(--instagram);
 
   --font-sans: var(--font-dm-sans);
   --font-display: var(--font-space-grotesk);

@@ -44,24 +44,7 @@ export type Project = {
   href?: string;
 };
 
-// TODO: replace with the real Instagram profile URL
 export const INSTAGRAM_URL = "https://www.instagram.com/uf.acm/";
-
-export const INSTAGRAM_HANDLE = "uf.acm";
-
-export type InstagramPost = {
-  id: string;
-  alt: string;
-  /** Path under /public, e.g. "/instagram/post-1.jpg" */
-  image?: string;
-};
-
-// TODO: replace placeholders with real posts
-export const INSTAGRAM_POSTS: InstagramPost[] = [
-  { id: "post-1", alt: "ACM Instagram post" },
-  { id: "post-2", alt: "ACM Instagram post" },
-  { id: "post-3", alt: "ACM Instagram post" },
-];
 
 // TODO: fill in real project details and links
 export const PROJECTS: Project[] = [

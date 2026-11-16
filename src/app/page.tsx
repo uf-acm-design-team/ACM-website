@@ -11,8 +11,11 @@ import Fishbowl from "@/app/components/Fishbowl/fishbowl";
 import { FISHBOWL } from "@/data/fishbowl";
 import Footer from "@/app/components/Footer/Footer";
 import { ABOUT } from "@/data/about";
+import { getInstagram } from "@/data/instagram";
 
-export default function Home() {
+export default async function Home() {
+  const instagram = await getInstagram();
+
   return (
     <>
       <Navbar />
@@ -21,7 +24,7 @@ export default function Home() {
         <Sponsors {...SPONSORS_SECTION} />
         <About content={ABOUT} />
         <Fishbowl {...FISHBOWL} />
-        <Instagram />
+        <Instagram content={instagram} />
         <Officers />
         <Projects />
         <WhyAcm />
