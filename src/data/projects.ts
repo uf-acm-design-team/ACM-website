@@ -7,7 +7,24 @@ export type Project = {
     image: string;
     imageAlt: string;
     websiteHref?: string;
-    teamHref?: string;
+    team?: ProjectTeam;
+};
+
+export type ProjectTeam = {
+    leads: string[];
+    members: string[];
+};
+
+export type TeamLabels = {
+    button: string;
+    leads: string;
+    members: string;
+};
+
+export const PROJECT_TEAM_LABELS: TeamLabels = {
+    button: "Meet the team",
+    leads: "Team leads",
+    members: "Members",
 };
 
 export const PROJECTS_HEADING = "Projects";
@@ -22,18 +39,24 @@ export const PROJECTS: Project[] = [
         tech: ["Next.js", "Tailwind CSS", "TypeScript"],
         image: "/projects/acm-website.png",
         imageAlt: "currently no photo decided",
-        teamHref: "#"
+        team: {
+            leads: ["Alvin Cabe", "David Gonzalez"],
+            members: ["Siddu Bandaru", "Braydin Gadouas", "Sanjith Gopinath", "Rudra Tuljapurkar","Alona V.","Bryce Williams"],
+        },
     },
     { // Need to add website and team link if doing it
         id: "acm-checkin",
         tabLabel: "ACM Check-In",
         title: "ACM Check-In",
         description: "Making check-in at every club event simple.",
-        tech: ["Next.js","Expo","Supabase"], // TODO: Need to ask paolvin abt tech used
+        tech: ["Next.js","Expo","Supabase","Clerk"],
         image: "/projects/acm-checkin.png",
         imageAlt: "currently no photo decided",
         websiteHref: "#",
-        teamHref: "#"
+        team: {
+            leads: ["Paolo Villanueva"],
+            members: ["Member Name", "Member Name", "Member Name", "Member Name"],
+        },
     },
     { // Need to add website and team link if doing it
         id: "student-projects",

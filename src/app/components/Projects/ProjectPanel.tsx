@@ -1,12 +1,14 @@
-import type { Project } from "@/data/projects";
+import type { Project, TeamLabels } from "@/data/projects";
 import Image from "next/image";
 import ArrowIcon from "./ArrowIcon";
+import MeetTheTeam from "./MeetTheTeam";
 
 type ProjectPanelProps = {
   project: Project;
+  teamLabels: TeamLabels;
 };
 
-export default function ProjectPanel({ project }: ProjectPanelProps) {
+export default function ProjectPanel({ project, teamLabels }: ProjectPanelProps) {
   return (
     <div className="grid grid-cols-1 gap-5 lg:grid-cols-[59.4%_1fr] lg:grid-rows-[1fr_auto_auto_1fr] lg:gap-x-12 lg:gap-y-4">
       <div className="flex flex-col gap-3 lg:col-start-2 lg:row-start-2 lg:gap-4">
@@ -23,7 +25,7 @@ export default function ProjectPanel({ project }: ProjectPanelProps) {
         <p className="text-muted">Placeholder image</p> {/* TODO: real image */}
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-5 lg:col-start-2 lg:row-start-3 lg:gap-y-4">
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-5 lg:col-start-2 lg:row-start-3 lg:gap-y-4">
         {project.tech && (
           <ul className="flex flex-wrap gap-2">
             {project.tech.map((tech) => (
@@ -39,23 +41,13 @@ export default function ProjectPanel({ project }: ProjectPanelProps) {
               href={project.websiteHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center gap-3 rounded-lg bg-navy px-4 font-medium text-accent-foreground lg:gap-5 lg:px-5"
+              className="inline-flex h-12 items-center gap-3 rounded-lg bg-navy px-4 text-[15px] font-medium text-accent-foreground lg:gap-5 lg:px-5 lg:text-base"
             >
               Visit website
               <ArrowIcon />
             </a>
           )}
-          {project.teamHref && (
-            <a
-              href={project.teamHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center gap-2.5 rounded-lg text-sm font-medium text-navy focus-visible:outline-offset-4 lg:text-[17px]"
-            >
-              Meet the team
-              <ArrowIcon />
-            </a>
-          )}
+          {project.team && <MeetTheTeam key={project.id} projectId={project.id} team={project.team} labels={teamLabels} />}
         </div>
       </div>
     </div>
