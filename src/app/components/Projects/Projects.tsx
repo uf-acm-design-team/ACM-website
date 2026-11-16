@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, type CSSProperties, type KeyboardEvent } from "react";
-import { Project } from "@/data/projects";
+import type { Project, TeamLabels } from "@/data/projects";
 import ProjectPanel from "./ProjectPanel";
 import TabShape from "./TabShape";
 
@@ -12,9 +12,10 @@ type ProjectsProps = {
   projects: Project[];
   heading: string;
   subtitle: string;
+  teamLabels: TeamLabels;
 };
 
-export default function Projects({ projects, heading, subtitle }: ProjectsProps) {
+export default function Projects({ projects, heading, subtitle, teamLabels }: ProjectsProps) {
 
   const [activeID, setActiveID] = useState(projects[0].id)
   const [usingArrows, setUsingArrows] = useState(false);
@@ -120,7 +121,7 @@ export default function Projects({ projects, heading, subtitle }: ProjectsProps)
           md:px-8 md:pt-6 md:pb-8 lg:pr-7 lg:pl-10 lg:pt-8 lg:pb-12
           ${usingArrows ? "" : "group-has-[[role=tab]:focus-visible]/folder:border-navy"}`}
         >
-          <ProjectPanel project={activeProject} />
+          <ProjectPanel project={activeProject} teamLabels={teamLabels} />
         </div>
       </div>
     </section>
