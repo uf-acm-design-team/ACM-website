@@ -5,19 +5,18 @@
 export type OfficerTeam = "design" | "workshop" | "social" | "marketing";
 
 export type Officer = {
-    id: string; /* unique key for React lists */
+    id: string; 
     name: string;
     role: string;
-    internship?: string; /* the blue line under the role, e.g. "SWE Intern @ Google" */
+    internship?: string;
     image?: string;
-    linkedin?: string; /* when set, the whole card links to their LinkedIn */
-    team?: OfficerTeam; /* only for officers in TEAM_OFFICERS, so the filter knows where they belong */
+    linkedin?: string; 
+    team?: OfficerTeam; 
 };
 
 export type TeamFilter = {
     id: OfficerTeam;
-    label: string; /* button text and the heading above that team's cards */
-    shortLabel: string; /* shorter button text for phones (UAWR2-92) */
+    label: string; 
 };
 
 export const OFFICERS_HEADING = "Meet the officer board";
@@ -26,7 +25,6 @@ export const OFFICERS_YEAR = "2026 – 2027";
 export const EXECUTIVE_BOARD_LABEL = "Executive board";
 export const OPERATIONS_TEAM_LABEL = "Operations team";
 
-// The top two groups always show, no matter which team is selected.
 export const EXECUTIVE_BOARD: Officer[] = [
     {
         id: "jason-tenczar",
@@ -75,19 +73,15 @@ export const OPERATIONS_TEAM: Officer[] = [
     },
 ];
 
-// The team filter buttons, in the order they appear. The first one is selected when the page loads.
 export const TEAM_FILTERS: TeamFilter[] = [
-    { id: "design", label: "Design team directors", shortLabel: "Design" },
-    { id: "workshop", label: "Workshop leads", shortLabel: "Workshop" },
-    { id: "social", label: "Social leads", shortLabel: "Social" },
-    { id: "marketing", label: "Marketing leads", shortLabel: "Marketing" },
+    { id: "design", label: "Design team directors" },
+    { id: "workshop", label: "Workshop leads" },
+    { id: "social", label: "Social leads" },
+    { id: "marketing", label: "Marketing leads" },
 ];
 
-// Shown when the selected team has nobody in TEAM_OFFICERS yet.
 export const TEAM_EMPTY_MESSAGE = "This team's roster is coming soon.";
 
-// Everyone the filter switches between. Each officer's `team` says which button shows them.
-// TODO: Workshop, Social and Marketing rosters haven't been provided yet (Figma only has the Design team).
 export const TEAM_OFFICERS: Officer[] = [
     {
         id: "alvin-cabe",
@@ -104,5 +98,53 @@ export const TEAM_OFFICERS: Officer[] = [
         internship: "SWE Intern @ Lockheed",
         image: "/officers/paolo-villanueva.jpg",
         team: "design",
+    },
+    {
+        id: "julian-perez",
+        name: "Julian Perez",
+        role: "Workshop Lead",
+        internship: "SWE Intern @ Motorola",
+        image: "/officers/julian-perez.jpg",
+        team: "workshop",
+    },
+    {
+        id: "guhan-sattanathan",
+        name: "Guhan Sattanathan",
+        role: "Workshop Lead",
+        internship: "Backend Engineer Intern @ Global Action Alliance",
+        image: "/officers/guhan-sattanathan.jpg",
+        team: "workshop",
+    },
+    {
+        id: "mikelangelo-mutti",
+        name: "Mikelangelo Mutti",
+        role: "Social Lead",
+        internship: "ML Research Assistant @ UF",
+        image: "/officers/mikelangelo-mutti.jpg",
+        team: "social",
+    },
+    {
+        id: "ryan-tram",
+        name: "Ryan Tram",
+        role: "Social Lead",
+        internship: "CS @ UF",
+        image: "/officers/ryan-tram.jpg",
+        team: "social",
+    },
+    {
+        id: "clara-anderson",
+        name: "Clara Anderson",
+        role: "Marketing Lead",
+        internship: "CS @ UF",
+        image: "/officers/clara-anderson.jpg",
+        team: "marketing",
+    },
+    {
+        id: "max-fitzgerald",
+        name: "Max FitzGerald",
+        role: "Marketing Lead",
+        internship: "CpE @ UF",
+        image: "/officers/max-fitzgerald.jpg",
+        team: "marketing",
     },
 ];
