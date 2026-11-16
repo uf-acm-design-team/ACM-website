@@ -102,8 +102,7 @@ export default function Projects({ projects, heading, subtitle }: ProjectsProps)
                     flareLeft={isActive && index > 0}
                   />
                 ))}
-                {/* From 420px to sm, extra right padding makes labels wrap instead of running into the slant. */}
-                <span className="relative line-clamp-2 min-w-0 text-balance pr-7 pl-2.5 text-left text-xs min-[420px]:pr-11 leading-tight sm:pr-9 sm:text-sm sm:pl-4 md:pl-6 md:text-base lg:pr-12 lg:pl-7 lg:text-lg">
+                <span className="relative line-clamp-2 min-w-0 text-balance pr-7 pl-2.5 text-left text-xs min-[420px]:pr-[38px] leading-tight sm:pr-9 sm:text-sm sm:pl-4 md:pl-6 md:text-base lg:pr-12 lg:pl-7 lg:text-lg">
                   {project.tabLabel}
                 </span>
               </button>
