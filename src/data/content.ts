@@ -4,8 +4,7 @@
 // Permanent UF ACM server invite (does not expire).
 export const DISCORD_URL = "https://discord.com/invite/3HPSwvY8Eb";
 
-// TODO: replace with the real GitHub organization URL
-export const GITHUB_URL = "#";
+export const GITHUB_URL = "https://github.com/uf-acm-design-team";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/uf.acm/";
 
@@ -49,16 +48,4 @@ export const DIVE_IN_STEPS = [
   "Join the official UF ACM Discord",
   "Check In to at least Three Club Events",
   "Start building things to Be Proud Of.",
-];
-
-export const FOOTER = {
-  name: "UF ACM",
-  copyright: "© 2026 UF ACM · Student chapter of the Association for Computing Machinery.",
-  location: "University of Florida / Gainesville, FL",
-};
-
-export const SOCIAL_LINKS = [
-  { label: "Instagram", href: INSTAGRAM_URL },
-  { label: "GitHub", href: GITHUB_URL },
-  { label: "Discord", href: DISCORD_URL },
 ];

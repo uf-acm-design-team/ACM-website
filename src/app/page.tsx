@@ -1,5 +1,7 @@
 import Navbar from "@/app/components/Navbar/Navbar";
 import Hero from "@/app/components/Hero/Hero";
+import UpcomingEvents from "@/app/components/UpcomingEvents/UpcomingEvents";
+import { getEvents, UPCOMING_EVENTS } from "@/data/events";
 import Sponsors from "@/app/components/Sponsors/Sponsors";
 import { SPONSORS_SECTION } from "@/data/sponsors";
 import About from "@/app/components/About/About";
@@ -18,17 +20,20 @@ import Fishbowl from "@/app/components/Fishbowl/fishbowl";
 import { FISHBOWL } from "@/data/fishbowl";
 import * as OFFICERS from "@/data/officers";
 import Footer from "@/app/components/Footer/Footer";
+import { FOOTER_SECTION } from "@/data/footer";
 import GetInvolved from "@/app/components/GetInvolved/GetInvolved";
 import { GET_INVOLVED } from "@/data/getInvolved";
 
 export default async function Home() {
   const instagram = await getInstagram();
+  const events = await getEvents();
 
   return (
     <>
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <UpcomingEvents {...UPCOMING_EVENTS} events={events} />
         <Sponsors {...SPONSORS_SECTION} />
         <About content={ABOUT} />
         <Fishbowl {...FISHBOWL} />
@@ -52,7 +57,7 @@ export default async function Home() {
         />
         <GetInvolved {...GET_INVOLVED} />
       </main>
-      <Footer />
+      <Footer {...FOOTER_SECTION} />
     </>
   );
 }
