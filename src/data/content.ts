@@ -7,17 +7,6 @@ export const DISCORD_URL = "#";
 // TODO: replace with the real GitHub organization URL
 export const GITHUB_URL = "#";
 
-export type NavLink = {
-  label: string;
-  href: string;
-};
-
-export const NAV_LINKS: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Officers", href: "#officers" },
-  { label: "Projects", href: "#projects" },
-];
-
 export const INSTAGRAM_URL = "https://www.instagram.com/uf.acm/";
 
 export type WhyReason = {
