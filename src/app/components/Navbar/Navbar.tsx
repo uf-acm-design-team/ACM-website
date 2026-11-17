@@ -120,6 +120,8 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
 
         <a
           href={checkInLink.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="col-start-3 row-start-1 inline-flex items-center justify-center justify-self-end rounded-lg border border-border bg-background px-3 py-2.5 text-sm font-medium leading-[21px] text-navy transition-colors duration-200 hover:bg-surface-tint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 motion-reduce:transition-none md:h-11 md:w-36 md:gap-2.5 md:px-5 md:text-base md:leading-6"
         >
           <span className="md:flex-1">{checkInLink.label}</span>

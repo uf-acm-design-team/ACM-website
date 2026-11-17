@@ -14,7 +14,6 @@ import {
   PROJECTS_SUBTITLE,
   PROJECT_TEAM_LABELS,
 } from "@/data/projects";
-import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Fishbowl from "@/app/components/Fishbowl/fishbowl";
 import { FISHBOWL } from "@/data/fishbowl";
 import * as OFFICERS from "@/data/officers";
@@ -51,7 +50,6 @@ export default async function Home() {
           subtitle={PROJECTS_SUBTITLE}
           teamLabels={PROJECT_TEAM_LABELS}
         />
-        <WhyAcm />
         <GetInvolved {...GET_INVOLVED} />
       </main>
       <Footer />
