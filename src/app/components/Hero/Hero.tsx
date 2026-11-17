@@ -14,7 +14,7 @@ const rise =
 const baseButton = "inline-flex items-center gap-4 rounded-sm font-sans text-base font-medium";
 
 const buttonVariants: Record<HeroButton["variant"], string> = {
-  primary: "h-14 w-[192px] justify-between px-6 py-4 bg-black text-white",
+  primary: "h-14 w-[192px] justify-between px-6 py-4 bg-navy text-accent-foreground",
   secondary: "h-14 w-[264px] justify-center px-6 py-4 border-[1.5px] border-border bg-surface text-navy",
 };
 
