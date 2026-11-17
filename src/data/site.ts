@@ -18,14 +18,14 @@ export const NAVBAR_LINKS: SiteLink[] = [
   },
   {
     label: "Calendar",
-    href: "#",
+    href: "/calendar",
     externalStyle: true,
   },
 ];
 
 export const CHECK_IN_LINK: SiteLink = {
   label: "Check in",
-  href: "#",
+  href: "https://checkin.uf-acm.org/acm/checkin",
 };
 
 export const NAVBAR_LABELS = {
