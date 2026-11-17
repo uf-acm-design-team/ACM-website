@@ -55,7 +55,10 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const updateScrollState = () => setIsScrolled(window.scrollY > 8);
+    // Shrinking the header pulls the page up by up to 24px, so shrink and expand at
+    // different scroll positions; a single threshold makes the header flicker.
+    const updateScrollState = () =>
+      setIsScrolled((scrolled) => (scrolled ? window.scrollY > 4 : window.scrollY > 32));
     updateScrollState();
     window.addEventListener("scroll", updateScrollState, { passive: true });
     return () => window.removeEventListener("scroll", updateScrollState);
