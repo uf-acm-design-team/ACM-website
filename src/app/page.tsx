@@ -6,6 +6,7 @@ import About from "@/app/components/About/About";
 import { ABOUT } from "@/data/about";
 import Instagram from "@/app/components/Instagram/Instagram";
 import { getInstagram } from "@/data/instagram";
+import Officers from "@/app/components/Officers/Officers";
 import Projects from "@/app/components/Projects/Projects";
 import {
   PROJECTS,
@@ -16,6 +17,7 @@ import {
 import WhyAcm from "@/app/components/WhyAcm/WhyAcm";
 import Fishbowl from "@/app/components/Fishbowl/fishbowl";
 import { FISHBOWL } from "@/data/fishbowl";
+import * as OFFICERS from "@/data/officers";
 import Footer from "@/app/components/Footer/Footer";
 import GetInvolved from "@/app/components/GetInvolved/GetInvolved";
 import { GET_INVOLVED } from "@/data/getInvolved";
@@ -32,6 +34,17 @@ export default async function Home() {
         <About content={ABOUT} />
         <Fishbowl {...FISHBOWL} />
         <Instagram content={instagram} />
+        <Officers
+          heading={OFFICERS.OFFICERS_HEADING}
+          year={OFFICERS.OFFICERS_YEAR}
+          executiveLabel={OFFICERS.EXECUTIVE_BOARD_LABEL}
+          executiveBoard={OFFICERS.EXECUTIVE_BOARD}
+          operationsLabel={OFFICERS.OPERATIONS_TEAM_LABEL}
+          operationsTeam={OFFICERS.OPERATIONS_TEAM}
+          teamFilters={OFFICERS.TEAM_FILTERS}
+          teamOfficers={OFFICERS.TEAM_OFFICERS}
+          emptyMessage={OFFICERS.TEAM_EMPTY_MESSAGE}
+        />
         <Projects
           projects={PROJECTS}
           heading={PROJECTS_HEADING}
