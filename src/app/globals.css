@@ -20,6 +20,9 @@
   --violet: #6655ed;
   --sky: #8dc3f9;
   --aqua: #ccedfa;
+  --ultraviolet: #6433ff;
+
+  --instagram: #0095f5;
 
   /* Projects folder gradient (left and right ends; the middle stop is --background). */
   --folder-start: #f1f6fe;
@@ -45,6 +48,9 @@
   --color-violet: var(--violet);
   --color-sky: var(--sky);
   --color-aqua: var(--aqua);
+  --color-ultraviolet: var(--ultraviolet);
+
+  --color-instagram: var(--instagram);
 
   --color-folder-start: var(--folder-start);
   --color-folder-end: var(--folder-end);

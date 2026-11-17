@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
         imageAlt: "currently no photo decided",
         team: {
             leads: ["Alvin Cabe", "David Gonzalez"],
-            members: ["Siddu Bandaru", "Braydin Gadouas", "Sanjith Gopinath", "Rudra Tuljapurkar","Alona V.","Bryce Williams"],
+            members: ["Siddharth Bandaru", "Braydin Gadouas", "Sanjith Gopinath", "Rudra Tuljapurkar","Alona Virichenko","Bryce Williams"],
         },
     },
     { // Need to add website and team link if doing it
@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
         tech: ["Next.js","Expo","Supabase","Clerk"],
         image: "/projects/acm-checkin.png",
         imageAlt: "currently no photo decided",
-        websiteHref: "#",
+        websiteHref: "https://checkin.uf-acm.org/",
         team: {
             leads: ["Paolo Villanueva"],
             members: ["Member Name", "Member Name", "Member Name", "Member Name"],
@@ -65,5 +65,5 @@ export const PROJECTS: Project[] = [
         description: "Side projects built by members, from hackathons to solo builds.",
         image: "/projects/student-projects.png",
         imageAlt: "currently no photo decided",
-    }
+    } 
 ];
