@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="620" height="470" viewBox="0 0 620 470" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Atmosphere / A &#194;&#183; Porcelain Current / Local current" opacity="0.07" filter="url(#filter0_f_0_25)">
+<ellipse cx="310" cy="235" rx="200" ry="125" fill="#8DC3F9"/>
+</g>
+<defs>
+<filter id="filter0_f_0_25" x="0" y="0" width="620" height="470" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="55" result="effect1_foregroundBlur_0_25"/>
+</filter>
+</defs>
+</svg>

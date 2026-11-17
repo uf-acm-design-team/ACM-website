@@ -1,8 +1,8 @@
 // Placeholder content for the landing page skeleton.
 // Swap in real copy, links and headshots here — the sections read from these arrays.
 
-// TODO: replace with the real Discord invite link
-export const DISCORD_URL = "#";
+// Permanent UF ACM server invite (does not expire).
+export const DISCORD_URL = "https://discord.com/invite/3HPSwvY8Eb";
 
 // TODO: replace with the real GitHub organization URL
 export const GITHUB_URL = "#";
