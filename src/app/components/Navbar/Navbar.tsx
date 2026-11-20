@@ -86,14 +86,20 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
   }, []);
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full border-b transition-[background-color,border-color,backdrop-filter] duration-300 ease-out motion-reduce:transition-none ${
-        isScrolled ? "border-border/50 bg-background/70 backdrop-blur-2xl" : "border-transparent bg-transparent backdrop-blur-none"
-      }`}
-    >
+    <header className="sticky top-0 z-50 isolate w-full">
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-x-0 top-0 z-0 border-b bg-background/70 backdrop-blur-2xl transition-[height,border-color] duration-300 ease-out motion-reduce:transition-none ${
+          menuOpen
+            ? "h-[180px] border-border/50"
+            : isScrolled
+              ? "h-[72px] border-border/50"
+              : "h-0 border-transparent"
+        }`}
+      />
       <nav
         aria-label="Primary navigation"
-        className={`mx-auto grid max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-5 transition-[height] duration-300 ease-out motion-reduce:transition-none sm:px-8 lg:px-20 ${
+        className={`relative z-10 mx-auto grid max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-5 transition-[height] duration-300 ease-out motion-reduce:transition-none sm:px-8 lg:px-20 ${
           isScrolled ? "h-[72px]" : "h-[72px] md:h-24"
         }`}
       >
@@ -141,15 +147,24 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
         </button>
       </nav>
 
-      {menuOpen && (
-        <div id="mobile-navigation" className="border-t border-border/50 bg-background/90 px-5 py-5 backdrop-blur-2xl md:hidden">
-          <div className="mx-auto flex max-w-[1440px] flex-col gap-5">
-            {links.map((link) => (
-              <NavigationLink key={link.label} link={link} onClick={() => setMenuOpen(false)} />
-            ))}
-          </div>
+      <div
+        id="mobile-navigation"
+        className="absolute inset-x-0 top-full z-10 h-[108px] overflow-hidden md:hidden"
+      >
+        <div
+          aria-hidden={!menuOpen}
+          inert={!menuOpen}
+          className={`mx-auto flex h-full max-w-[1440px] flex-col gap-5 px-5 py-5 transition-transform duration-300 ease-out motion-reduce:transition-none ${
+            menuOpen
+              ? "translate-y-0"
+              : "pointer-events-none -translate-y-full"
+          }`}
+        >
+          {links.map((link) => (
+            <NavigationLink key={link.label} link={link} onClick={() => setMenuOpen(false)} />
+          ))}
         </div>
-      )}
+      </div>
     </header>
   );
 }
