@@ -24,7 +24,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${dmSans.variable} ${spaceGrotesk.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="relative isolate flex min-h-full flex-col overflow-x-clip">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 hidden select-none bg-[url('/background/flow-atlas.svg')] bg-[length:100%_100%] bg-no-repeat md:block"
+        />
+        {children}
+      </body>
     </html>
   );
 }
