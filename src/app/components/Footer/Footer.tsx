@@ -18,7 +18,7 @@ export default function Footer({ name, links, copyright, location }: FooterProps
     <footer className="relative mx-auto w-full max-w-360 px-6 pt-12 pb-10 font-sans md:px-10 lg:px-16 lg:pt-16">
       <div aria-hidden="true" className="absolute inset-x-6 top-0 h-px bg-border md:inset-x-10 lg:inset-x-16" />
 
-      <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+      <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex items-center gap-4 lg:gap-6">
           <Image
             src={acmFish}

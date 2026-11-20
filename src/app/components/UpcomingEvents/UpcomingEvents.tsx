@@ -49,7 +49,7 @@ export default function UpcomingEvents({ heading, calendar, emptyMessage, events
       </div>
 
       {nextThree.length === 0 ? (
-        <p className="mt-6 rounded-xl border border-border bg-surface-tint px-6 py-10 text-center text-base leading-6 text-muted">
+        <p className="mt-6 rounded-xl border border-border bg-transparent px-6 py-10 text-center text-base leading-6 text-muted">
           {emptyMessage}
         </p>
       ) : (
@@ -60,7 +60,7 @@ export default function UpcomingEvents({ heading, calendar, emptyMessage, events
             return (
               <li
                 key={event.id}
-                className="flex gap-4 rounded-xl border border-border bg-surface-tint p-5"
+                className="flex gap-4 rounded-xl border border-border bg-transparent p-5"
               >
                 <time dateTime={event.date} className="flex w-14 shrink-0 flex-col items-center">
                   <span className="font-display text-5xl leading-none font-medium tracking-[-0.03em] text-navy">
