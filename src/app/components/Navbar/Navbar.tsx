@@ -86,10 +86,16 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 isolate w-full">
+    <header
+      className={`sticky top-0 z-50 isolate w-full md:border-b md:transition-[background-color,border-color,backdrop-filter] md:duration-300 md:ease-out md:motion-reduce:transition-none ${
+        isScrolled
+          ? "md:border-border/50 md:bg-background/70 md:backdrop-blur-2xl"
+          : "md:border-transparent md:bg-transparent md:backdrop-blur-none"
+      }`}
+    >
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-x-0 top-0 z-0 border-b bg-background/70 backdrop-blur-2xl transition-[height,border-color] duration-300 ease-out motion-reduce:transition-none ${
+        className={`pointer-events-none absolute inset-x-0 top-0 z-0 border-b bg-background/70 backdrop-blur-2xl transition-[height,border-color] duration-300 ease-out motion-reduce:transition-none md:hidden ${
           menuOpen
             ? "h-[180px] border-border/50"
             : isScrolled
@@ -99,7 +105,7 @@ function NavbarContent({ brand, links, checkInLink }: NavbarContentProps) {
       />
       <nav
         aria-label="Primary navigation"
-        className={`relative z-10 mx-auto grid max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-5 transition-[height] duration-300 ease-out motion-reduce:transition-none sm:px-8 lg:px-20 ${
+        className={`relative z-10 mx-auto grid max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center px-5 transition-[height] duration-300 ease-out motion-reduce:transition-none sm:px-8 md:static md:z-auto lg:px-20 ${
           isScrolled ? "h-[72px]" : "h-[72px] md:h-24"
         }`}
       >
