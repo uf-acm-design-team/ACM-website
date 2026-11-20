@@ -17,11 +17,13 @@ type ProjectsProps = {
 
 export default function Projects({ projects, heading, subtitle, teamLabels }: ProjectsProps) {
 
-  const [activeID, setActiveID] = useState(projects[0].id)
+  const [activeID, setActiveID] = useState(projects[0]?.id);
   const [usingArrows, setUsingArrows] = useState(false);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const activeProject = projects.find((project) => project.id === activeID) ?? projects[0];
   const activeIndex = projects.findIndex((project) => project.id === activeID);
+
+  if (!activeProject) return null;
 
   const tabCount = projects.length;
   const tabSizing = {
