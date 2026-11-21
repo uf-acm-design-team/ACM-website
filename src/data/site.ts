@@ -6,7 +6,7 @@ export type SiteLink = {
 
 export const SITE_BRAND = {
   name: "ACM",
-  href: "#",
+  href: "/",
   accessibleLabel: "ACM home",
 };
 
