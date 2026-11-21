@@ -35,26 +35,30 @@ export const CALENDAR_LABELS = {
     previousMonth: "Previous month",
     nextMonth: "Next month",
     search: "Search events",
-    today: "Today",
     allDay: "All day",
-    noEvents: "No events scheduled",
     moreEvents: "more",
     filters: "Filter events",
+    upcomingCaption: "Today onward",
+    moreSoon: "More events will appear here as they’re announced.",
+    newTab: "(opens in a new tab)",
+    today: "Today",
+    eventCountOne: "event this month",
+    eventCountOther: "events this month",
 };
 
 export type CalendarLabels = typeof CALENDAR_LABELS;
 
 const GOOGLE_CALENDAR_ID = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID;
 
+/* href is null when the calendar ID env var is missing, so the link is hidden instead of broken */
 export const GOOGLE_CALENDAR_LINK = {
     label: "Add to Google Calendar",
     href: GOOGLE_CALENDAR_ID
         ? `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(GOOGLE_CALENDAR_ID)}`
-        : "#",
+        : null,
 };
 
 export const WEEK_STARTS_ON = 0; /* date-fns starts sunday on 0 */
-export const CALENDAR_TIMEZONE = "America/New_York";
 
 /* Remove later */
 export const PLACEHOLDER_EVENTS: CalendarEvent[] = [
@@ -75,6 +79,15 @@ export const PLACEHOLDER_EVENTS: CalendarEvent[] = [
         allDay: false,
         location: "Mala 2100",
         eventType: "social",
+    },
+    {
+        id: "intro-to-cloud",
+        title: "Intro to Cloud Workshop",
+        start: "2026-11-21T14:00:00-05:00",
+        end: "2026-11-21T16:00:00-05:00",
+        allDay: false,
+        location: "Mala 2100",
+        eventType: "workshop",
     },
     {
         id: "build-night-portfolio",

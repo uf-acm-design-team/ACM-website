@@ -2,15 +2,26 @@
 
 import { useState } from "react";
 import { addMonths, format, parseISO, startOfMonth, isSameMonth } from "date-fns";
-import type { CalendarLabels, CalendarFilter, CalendarEvent } from "@/data/calendar";
+import type { CalendarLabels, CalendarFilter, CalendarEvent, CalendarEventType } from "@/data/calendar";
 import CalendarToolbar from "./CalendarToolbar";
-import { getMonthDays, getWeekdayNames, groupEventsByDay, toDateKey } from "./calendarGrid";
+import CalendarUpcomingList from "./CalendarUpcomingList";
+import DayCard from "./DayCard";
+import {
+  filterEvents,
+  getEventsInMonth,
+  getMonthDays,
+  getWeekdayNames,
+  groupEventsByDay,
+  toDateKey,
+} from "./calendarGrid";
 import { useToday } from "./useToday";
 
 type CalendarBoardProps = {
   events: CalendarEvent[];
   filters: CalendarFilter[];
   labels: CalendarLabels;
+  typeLabels: Record<CalendarEventType, string>;
+  checkInHref: string;
 };
 
 const ARROW_CLASS =
@@ -33,14 +44,16 @@ function ArrowIcon({ direction }: { direction: "previous" | "next" }) {
   );
 }
 
-export default function CalendarBoard({ filters, labels, events }: CalendarBoardProps) {
+export default function CalendarBoard({ events, filters, labels, typeLabels, checkInHref }: CalendarBoardProps) {
   const today = useToday();
   const [monthOffset, setMonthOffset] = useState(0);
   const [activeFilter, setActiveFilter] = useState<CalendarFilter["id"]>("all");
   const [query, setQuery] = useState("");
 
   const visibleMonth = today ? startOfMonth(addMonths(parseISO(today), monthOffset)) : null;
-  const eventsByDay = groupEventsByDay(events);
+  const visibleEvents = filterEvents(events, activeFilter, query, today);
+  const eventsByDay = groupEventsByDay(visibleEvents);
+  const monthEvents = visibleMonth ? getEventsInMonth(visibleEvents, visibleMonth) : [];
 
   return (
     <section className="flex flex-col gap-6">
@@ -77,35 +90,56 @@ export default function CalendarBoard({ filters, labels, events }: CalendarBoard
         labels={labels}
       />
 
-      <div className="flex flex-col gap-2">
-        <div className="grid h-11 grid-cols-7 items-center gap-2 text-center text-[13px] font-medium text-muted">
-          {getWeekdayNames().map((name) => (
-            <p key={name}>{name}</p>
-          ))}
-        </div>
+      <p aria-live="polite" className="sr-only">
+        {visibleMonth &&
+          `${monthEvents.length} ${monthEvents.length === 1 ? labels.eventCountOne : labels.eventCountOther}`}
+      </p>
 
-        {visibleMonth && (
-          <div className="grid grid-cols-7 gap-2">
-            {getMonthDays(visibleMonth).map((day) => {
-              const key = toDateKey(day);
-              const dayEvents = eventsByDay.get(key) ?? [];
-              const inMonth = isSameMonth(day, visibleMonth);
-
-              return (
-                <div
-                  key={key}
-                  className={`h-36 rounded-xl border border-border p-3 ${inMonth ? "bg-surface" : "bg-surface-tint"}`}
-                >
-                  {format(day, "d")}
-                  {dayEvents.map((event) => (
-                    <p key={event.id} className="text-xs">{event.title}</p>
-                  ))}
-                </div>
-              );
-            })}
+      {activeFilter === "upcoming" ? (
+        visibleMonth &&
+        today && (
+          <CalendarUpcomingList
+            events={monthEvents}
+            today={today}
+            checkInHref={checkInHref}
+            labels={labels}
+            typeLabels={typeLabels}
+          />
+        )
+      ) : (
+        <div className="flex flex-col gap-2">
+          <div
+            aria-hidden="true"
+            className="grid h-11 grid-cols-7 items-center gap-2 text-center text-[13px] font-medium text-muted"
+          >
+            {getWeekdayNames().map((name) => (
+              <p key={name}>{name}</p>
+            ))}
           </div>
-        )}
-      </div>
+
+          {visibleMonth && (
+            <ol role="list" className="grid grid-cols-7 gap-2">
+              {getMonthDays(visibleMonth).map((day) => {
+                const key = toDateKey(day);
+                const dayEvents = eventsByDay.get(key) ?? [];
+                const inMonth = isSameMonth(day, visibleMonth);
+
+                return (
+                  <DayCard
+                    key={key}
+                    day={day}
+                    events={inMonth ? dayEvents : []}
+                    inMonth={inMonth}
+                    isToday={key === today}
+                    labels={labels}
+                    typeLabels={typeLabels}
+                  />
+                );
+              })}
+            </ol>
+          )}
+        </div>
+      )}
     </section>
   );
 }
